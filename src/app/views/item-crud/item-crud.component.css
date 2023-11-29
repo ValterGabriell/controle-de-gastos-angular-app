@@ -1,0 +1,56 @@
+/* item-list.component.css */
+
+.item-list-container {
+  font-family: 'Arial', sans-serif;
+  background-color: #FFF;
+  color: #FFFFFF;
+  padding: 20px;
+}
+
+h2 {
+  color: #001F3F;
+}
+
+.item-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  margin-bottom: 10px;
+  background-color: #001F3F;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.item-description,
+.item-category,
+.item-value,
+.item-payment-type {
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: #E74C3C;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+.delete-button:hover {
+  background-color: #C0392B;
+}
+
+.create-item-link {
+  display: block;
+  color: #2ECC71;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.create-item-link:hover {
+  color: #FFFFFF;
+}

@@ -1,0 +1,18 @@
+
+<div class="item-list-container">
+
+  <h2>Lista de Itens</h2>
+
+  <ul class="item-list">
+    <li *ngFor="let item of expenseList" class="item">
+      <span class="item-description">{{ item.description }}</span> -
+      <span class="item-category">{{ item.category }}</span> -
+      <span class="item-value">{{ item.value }}</span> -
+      <span class="item-payment-type">{{ item.paymentType }}</span>
+      <button class="delete-button" (click)="deleteExpense(item)">Excluir</button>
+    </li>
+  </ul>
+
+  <a class="create-item-link" routerLink="/item/create">Criar Item</a>
+
+</div>
