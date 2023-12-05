@@ -7,6 +7,12 @@
   padding: 20px;
 }
 
+.interal-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 h2 {
   color: #001F3F;
 }
@@ -30,6 +36,24 @@ h2 {
   margin-right: 10px;
 }
 
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.name-filter{
+  color: #001F3F;
+}
+
 .delete-button {
   background-color: #E74C3C;
   color: #FFFFFF;
@@ -46,9 +70,10 @@ h2 {
 
 .create-item-link {
   display: block;
-  color: #2ECC71;
+  color: #C0392B;
   margin-top: 10px;
   text-decoration: none;
+  font-size: 16px;
 }
 
 .create-item-link:hover {

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-item-crud',
   standalone: true,
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule,RouterLink,FormsModule],
   templateUrl: './item-crud.component.html',
   styleUrl: './item-crud.component.css'
 })
@@ -18,10 +18,31 @@ export class ItemCrudComponent {
     // ... mais despesas podem ser adicionadas conforme necessário
   ];
 
+  filteredExpenseList: any[] = [];
+  categoryFilter: string = '';
+
+  constructor(){
+    this.filteredExpenseList = this.expenseList;
+  }
+
+  onCategoryFilterChange() {
+    this.filteredExpenseList = this.filterListByCategory(this.categoryFilter);
+  }
+
+  filterListByCategory(category: string): any[] {
+    if (category === '') {
+      return this.expenseList;
+    } else {
+      return this.expenseList.filter(item => item.category === category);
+    }
+  }
+
+  shouldHideItem(item: any): boolean {
+    return this.categoryFilter !== '' && item.category !== this.categoryFilter;
+  }
 
   deleteExpense(item: any) {
-      console.log("deletando item " + item.description);
-      
+      console.log("deletando item " + item.description); 
   }
 
 }

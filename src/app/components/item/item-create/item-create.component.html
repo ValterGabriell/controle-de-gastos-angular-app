@@ -13,7 +13,7 @@
   
     <div>
       <label for="category">Category:</label>
-      <select id="category" name="category" [(ngModel)]="expense.category" required>
+      <select id="category" name="category"  [(ngModel)]="expense.category" required>
         <option value="LOVE">Love</option>
         <option value="FOOD">Food</option>
       </select>
@@ -34,7 +34,7 @@
       <input type="number" id="value" name="value" [(ngModel)]="expense.value" required>
     </div>
   
-    <button type="submit">Save Expense</button>
+    <button onclick="saveExpense()">Save Expense</button>
   </form>
 
   

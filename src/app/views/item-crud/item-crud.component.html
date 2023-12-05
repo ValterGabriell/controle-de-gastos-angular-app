@@ -1,10 +1,22 @@
 
 <div class="item-list-container">
 
-  <h2>Lista de Itens</h2>
+  <div class="interal-div">
+    <h2>Lista de Itens</h2>
+    <a class="create-item-link" routerLink="/item/create">Criar Item</a>
+  </div>
+
+  <div class="filter-container">
+    <label for="categoryFilter">Filtrar por Categoria:</label>
+    <select id="categoryFilter" [(ngModel)]="categoryFilter">
+      <option value="">Todas</option>
+      <option value="LOVE">Love</option>
+      <option value="FOOD">Food</option>
+    </select>
+  </div>
 
   <ul class="item-list">
-    <li *ngFor="let item of expenseList" class="item">
+    <li *ngFor="let item of filteredExpenseList" class="item" [hidden]="shouldHideItem(item)">
       <span class="item-description">{{ item.description }}</span> -
       <span class="item-category">{{ item.category }}</span> -
       <span class="item-value">{{ item.value }}</span> -
@@ -13,6 +25,5 @@
     </li>
   </ul>
 
-  <a class="create-item-link" routerLink="/item/create">Criar Item</a>
 
 </div>
